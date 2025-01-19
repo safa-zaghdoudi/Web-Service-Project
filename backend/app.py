@@ -17,10 +17,10 @@ def create_app():
     app.config["OPENAPI_SWAGGER_UI_PATH"] = "/swagger-ui"
     app.config["OPENAPI_SWAGGER_UI_URL"] = "https://cdn.jsdelivr.net/npm/swagger-ui-dist/"
     app.register_blueprint(auth, url_prefix="/auth")    #import the auth blueprint and initialize it
-    app.config["SECRET_KEY"] = "a13ce7904227e39f15528a97bd437bd04428266e39f8f31579b45bf957165327"    # include a secret key for JWT
+    app.config["SECRET_KEY"] = "***************************"    # include a secret key for JWT
 
     # MongoDB Setup
-    client = MongoClient("mongodb+srv://zaghdoudisafe:4T6p7FyUp8DudtEn@cluster0.pgrad.mongodb.net")
+    client = MongoClient("mongodb+srv://<username>:<password>@cluster0.pgrad.mongodb.net")
     app.db = client["residency_db"]  # Attach the database to the Flask app for use in other parts
 
     # Register Residency Blueprint
